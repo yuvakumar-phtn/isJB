@@ -18,3 +18,5 @@ you will get results like this :
 cydia://package/com.masbog.com
 cydia://package/com.masbog.com
 ```
+
+# accept donation to bitcoint at 1FtEyvpyJQ3A5dkp3XtBmtEG8Th3fqf78F
