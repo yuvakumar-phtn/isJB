@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <sys/utsname.h>
 
 @interface ViewController () <NSURLConnectionDataDelegate>
 @property (strong, nonatomic) NSURLConnection *connection;
@@ -18,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    NSLog(@"%@", [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 
