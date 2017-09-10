@@ -1,5 +1,6 @@
 # isJB
-  isJB is a tool for Jailbreak Detection for iOS device, detection work with "xcon", "Snoop-IT", and "tsProtector 8+" installed!<br /><br />
+  isJB is a tool for Jailbreak Detection for iOS device, detection work with "xCon 42-beta4", "Snoop-IT", and "tsProtector 8+" installed!<br /><br />
+  ![xCon 42-beta4 Installed](f.png?raw=true "xCon 42-beta4 Installed")<br />
   !!! PLEASE DON'T USE FUNCTION isCracked FOR A WHILE, STILL ON RESEREACH, THIS FUNCTION NOT WORKING ON IOS >= 10.3.2 !!!
   ![This Application](b.png?raw=true "This Application")<br />
 
