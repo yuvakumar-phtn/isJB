@@ -135,7 +135,6 @@ BOOL isJB()
     }
     
     NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
-    BOOL wkboolwk = NO;
     for (NSString *fufufufu in hahaList){
         
         if (![fufufufu containsString:@"lnk"]) {
@@ -143,12 +142,11 @@ BOOL isJB()
             for (NSString *wkwkwkwk in hahaList){
                 
                 if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
-                    wkboolwk = YES;
+                    return YES;
                 }
             }
         }
     }
-    return YES;
 #endif
     return NO;
 }
