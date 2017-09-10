@@ -137,11 +137,11 @@ BOOL isJB()
     NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
     BOOL wkboolwk = NO;
     for (NSString *fufufufu in hahaList){
-        NSLog(@"%@", fufufufu);
+        
         if (![fufufufu containsString:@"lnk"]) {
             NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
             for (NSString *wkwkwkwk in hahaList){
-                NSLog(@"%@", wkwkwkwk);
+                
                 if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
                     wkboolwk = YES;
                 }
