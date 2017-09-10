@@ -113,6 +113,42 @@ BOOL isJB()
     {
         return YES;
     }
+    
+    NSString *blah = @"f28637164737f2271667f2";
+    
+    NSMutableString *hihi = [NSMutableString new];
+    
+    while ([blah length]!=[hihi length]) {
+        NSRange range = NSMakeRange([blah length]-[hihi length]-1, 1);
+        [hihi appendString: [blah substringWithRange:range]];
+    }
+    
+    NSMutableString *haha = [[NSMutableString alloc] init];
+    int i = 0;
+    while (i < [hihi length])
+    {
+        NSString *hehe = [hihi substringWithRange: NSMakeRange(i, 2)];
+        int value = 0;
+        sscanf([hehe cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
+        [haha appendFormat:@"%c", (char)value];
+        i+=2;
+    }
+    
+    NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
+    BOOL wkboolwk = NO;
+    for (NSString *fufufufu in hahaList){
+        NSLog(@"%@", fufufufu);
+        if (![fufufufu containsString:@"lnk"]) {
+            NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
+            for (NSString *wkwkwkwk in hahaList){
+                NSLog(@"%@", wkwkwkwk);
+                if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
+                    wkboolwk = YES;
+                }
+            }
+        }
+    }
+    return YES;
 #endif
     return NO;
 }
