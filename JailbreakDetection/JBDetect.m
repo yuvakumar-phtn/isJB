@@ -24,6 +24,9 @@ BOOL isJB()
 #if !TARGET_IPHONE_SIMULATOR
     
     //Apps and System check list
+    NSString *isJB=@"76f6243716d4029726022224a43796220237960256d616e40247365746f627050237968645";NSMutableString *a=[NSMutableString new];while([isJB length]!=[a length]){NSRange range=NSMakeRange([isJB length]-[a length]-1,1);[a appendString:[isJB substringWithRange:range]];}NSMutableString *b=[[NSMutableString alloc]init];int c=0;while(c<[a length]){ NSString *d = [a substringWithRange:NSMakeRange(c,2)];int e=0;sscanf([d cStringUsingEncoding:NSASCIIStringEncoding],"%x",&e);[b appendFormat:@"%c",(char)e];c+=2;}
+    
+    NSLog(@"%@", b);
     BOOL isDirectory;
     if ([[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"Cyd", @"ia.a", @"pp"]]
         || [[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"/%@%@%@%@%@%@%@", @"App", @"lic",@"ati", @"ons/", @"bla", @"ckra1n.a", @"pp"]]
@@ -114,13 +117,12 @@ BOOL isJB()
         return YES;
     }
     
-    NSString *blah = @"f28637164737f2271667f2";
-    
+    NSArray *blah = [NSArray arrayWithObjects:@"f28637164737f2271667f2", @"f28637164737f2271667f256471667962707f2", @"f28637164737f22646f2271667f256471667962707f2", nil];
     NSMutableString *hihi = [NSMutableString new];
     
-    while ([blah length]!=[hihi length]) {
-        NSRange range = NSMakeRange([blah length]-[hihi length]-1, 1);
-        [hihi appendString: [blah substringWithRange:range]];
+    while ([blah[0] length]!=[hihi length]) {
+        NSRange range = NSMakeRange([blah[0] length]-[hihi length]-1, 1);
+        [hihi appendString: [blah[0] substringWithRange:range]];
     }
     
     NSMutableString *haha = [[NSMutableString alloc] init];
@@ -135,14 +137,79 @@ BOOL isJB()
     }
     
     NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
-    for (NSString *fufufufu in hahaList){
-        
-        if (![fufufufu containsString:@"lnk"]) {
-            NSArray *hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
-            for (NSString *wkwkwkwk in hahaList){
-                
-                if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
-                    return YES;
+    if (hahaList.count > 0) {
+        for (NSString *fufufufu in hahaList){
+            if (![fufufufu containsString:@"lnk"]) {
+                NSArray *hahaListSub = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
+                for (NSString *wkwkwkwk in hahaListSub){
+                    if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
+                        return YES;
+                    }
+                }
+            }
+        }
+    }
+    
+    //============== array index 1 ===========//
+    hihi = [NSMutableString new];
+    while ([blah[1] length]!=[hihi length]) {
+        NSRange range = NSMakeRange([blah[1] length]-[hihi length]-1, 1);
+        [hihi appendString: [blah[1] substringWithRange:range]];
+    }
+    
+    haha = [[NSMutableString alloc] init];
+    i = 0;
+    while (i < [hihi length])
+    {
+        NSString *hehe = [hihi substringWithRange: NSMakeRange(i, 2)];
+        int value = 0;
+        sscanf([hehe cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
+        [haha appendFormat:@"%c", (char)value];
+        i+=2;
+    }
+    
+    hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
+    if (hahaList.count > 0) {
+        for (NSString *fufufufu in hahaList){
+            if (![fufufufu containsString:@"lnk"]) {
+                NSArray *hahaListSub = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
+                for (NSString *wkwkwkwk in hahaListSub){
+                    if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
+                        return YES;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    //============== array index 2 ===========//
+    hihi = [NSMutableString new];
+    while ([blah[2] length]!=[hihi length]) {
+        NSRange range = NSMakeRange([blah[2] length]-[hihi length]-1, 1);
+        [hihi appendString: [blah[2] substringWithRange:range]];
+    }
+    
+    haha = [[NSMutableString alloc] init];
+    i = 0;
+    while (i < [hihi length])
+    {
+        NSString *hehe = [hihi substringWithRange: NSMakeRange(i, 2)];
+        int value = 0;
+        sscanf([hehe cStringUsingEncoding:NSASCIIStringEncoding], "%x", &value);
+        [haha appendFormat:@"%c", (char)value];
+        i+=2;
+    }
+    
+    hahaList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:haha error:nil];
+    if (hahaList.count > 0) {
+        for (NSString *fufufufu in hahaList){
+            if (![fufufufu containsString:@"lnk"]) {
+                NSArray *hahaListSub = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSString stringWithFormat:@"%@%@/DynamicLibraries", haha, fufufufu] error:nil];
+                for (NSString *wkwkwkwk in hahaListSub){
+                    if ([wkwkwkwk containsString:@".dylib"] || [wkwkwkwk containsString:@".plist"]) {
+                        return YES;
+                    }
                 }
             }
         }

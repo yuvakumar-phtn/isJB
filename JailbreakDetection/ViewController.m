@@ -22,7 +22,7 @@
     struct utsname systemInfo;
     uname(&systemInfo);
     
-    NSLog(@"%@", [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding]);
+    NSLog(@"Your Device : %@", [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -30,7 +30,7 @@
 {
     NSLog(@"CHECK");
     
-    NSURL *httpsURL = [NSURL URLWithString:@"https://masbog.com/ping.php"];
+    NSURL *httpsURL = [NSURL URLWithString:@"https://masbog.com/isJB.html"];
     NSURLRequest *request = [NSURLRequest requestWithURL:httpsURL cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:15.0f];
     self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
     [self.connection start];
@@ -98,7 +98,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *response = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    [self printMessage:[NSString stringWithFormat:@"Your IP Address is : %@", response]];
+    [self printMessage:[NSString stringWithFormat:@"%@", response]];
     self.responseData = nil;
 }
 
